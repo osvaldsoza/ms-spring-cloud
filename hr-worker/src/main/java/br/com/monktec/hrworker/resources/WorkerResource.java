@@ -15,8 +15,11 @@ import java.util.List;
 @RequestMapping("/workers")
 public class WorkerResource {
 
-    @Autowired
-    private WorkerService workerService;
+    private final WorkerService workerService;
+
+    public WorkerResource(WorkerService workerService) {
+        this.workerService = workerService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Worker>> findAll(){

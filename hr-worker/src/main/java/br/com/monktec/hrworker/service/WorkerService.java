@@ -11,8 +11,11 @@ import java.util.List;
 @Service
 public class WorkerService {
 
-    @Autowired
-    private WorkerRepository workerRepository;
+    private final WorkerRepository workerRepository;
+
+    public WorkerService(WorkerRepository workerRepository) {
+        this.workerRepository = workerRepository;
+    }
 
     public List<Worker> findAll() {
         var workers = workerRepository.findAll();
