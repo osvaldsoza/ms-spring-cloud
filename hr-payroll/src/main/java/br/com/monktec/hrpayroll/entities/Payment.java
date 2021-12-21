@@ -41,6 +41,4 @@ public class Payment {
     public void setDays(Integer days) {
         this.days = days;
     }
-
-
 }
