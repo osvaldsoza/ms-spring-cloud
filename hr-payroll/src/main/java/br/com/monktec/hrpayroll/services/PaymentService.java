@@ -17,13 +17,9 @@ public class PaymentService {
 
         var worker = workerFeignClient.findById(workerId).getBody();
 
-        var name = "";
-        var dailyIncome = 0.0;
+        var name = worker.getName();
+        var dailyIncome = worker.getDailyIncome();
 
-        if( worker != null){
-             name = worker.getName();
-            dailyIncome = worker.getDailyIncome();
-        }
 
         return new Payment(name, dailyIncome, days);
     }
